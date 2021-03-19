@@ -1,8 +1,7 @@
 import click
 import spacy
-
-from _runner import st_process_doc, st_process_multiple_doc
-from utils import parse_files
+from has_keyword_extractor.utils import parse_files
+from has_keyword_extractor._runner import st_process_doc, st_process_multiple_doc
 
 
 @click.group()

@@ -3,9 +3,8 @@ from concurrent.futures.thread import ThreadPoolExecutor
 from typing import Dict
 
 from alive_progress import alive_bar
-
-from _statistics_keywords_extraction import StatisticsKeywordsExtraction
-from _preprocessing_text import preprocessing_text
+from has_keyword_extractor._preprocessing_text import preprocessing_text
+from has_keyword_extractor._statistics_keywords_extraction import StatisticsKeywordsExtraction
 
 
 def st_process_doc(text: str, nlp, alpha: float, threshold: float):
@@ -15,7 +14,7 @@ def st_process_doc(text: str, nlp, alpha: float, threshold: float):
 
 
 def st_process_multiple_doc(
-    documents: Dict[str, str], nlp, alpha: float, threshold: float, workers=20
+    documents: Dict, nlp, alpha: float, threshold: float, workers=20
 ):
     print("🔎 Begin keyword extraction : ")
     result = {}
