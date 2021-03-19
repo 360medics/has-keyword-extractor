@@ -7,7 +7,7 @@ print(find_packages())
 setup(
     name="keyword-extraction",
     packages=find_packages(),
-    version="0.1.0",
+    version="0.2.0",
     description="the implementation  ths keyword extraction technique "
                 "described in the following paper : https://tinyurl.com/59b9ewb2",
     author="Simon Meoni",
