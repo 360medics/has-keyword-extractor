@@ -1,4 +1,9 @@
 # HAS Keyword Extractor
+to install the package : 
+```bash
+pip install git+https://github.com/360medics/has-keyword-extractor.git@master
+```
+
 
 to execute the code inside your code :
 ```python
@@ -14,3 +19,6 @@ to execute the application into the console
 ```shell
 extract_keywords process-docs --alpha 0.04 --threshold 0.5 --path ./data/processed-HAS.json --spacy-model fr_core_news_sm
 ```
+
+[![Generic badge](https://img.shields.io/badge/python-3.8-green.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/python-3.9-green.svg)](https://shields.io/)
