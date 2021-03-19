@@ -5,9 +5,9 @@ with open("requirements.txt") as f:
 
 print(find_packages())
 setup(
-    name="keyword-extraction",
+    name="keyword-extraction-has",
     packages=find_packages(),
-    version="0.2.0",
+    version="0.3.0",
     description="the implementation  ths keyword extraction technique "
                 "described in the following paper : https://tinyurl.com/59b9ewb2",
     author="Simon Meoni",
