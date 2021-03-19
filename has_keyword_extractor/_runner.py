@@ -14,7 +14,7 @@ def st_process_doc(text: str, nlp, alpha: float, threshold: float):
 
 
 def st_process_multiple_doc(
-    documents: Dict[str, str], nlp, alpha: float, threshold: float, workers=20
+    documents: Dict, nlp, alpha: float, threshold: float, workers=20
 ):
     print("🔎 Begin keyword extraction : ")
     result = {}

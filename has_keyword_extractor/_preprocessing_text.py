@@ -1,7 +1,7 @@
 import re
 
 
-def preprocessing_text(text: str, nlp, sep="[PUNCT]") -> list[str]:
+def preprocessing_text(text: str, nlp, sep="[PUNCT]") -> list:
     text = re.sub(r"\d+", "", text).lower()
     # tokenize text
     doc = nlp(text)

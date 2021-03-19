@@ -16,7 +16,7 @@ from has_keyword_extractor.ranked_ngrams import compute_ranked_ngrams
 
 
 class StatisticsKeywordsExtraction:
-    def __init__(self, words: list[str], alpha: float, threshold: float):
+    def __init__(self, words: list, alpha: float, threshold: float):
         self.words = words
         self.bigrams = list(nltk.bigrams(words))
         self.bigram_frequencies = Counter(
