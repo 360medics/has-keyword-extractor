@@ -4,15 +4,15 @@ from typing import Dict
 
 import nltk
 
-from compute_cumulative_frequencies import (
+from has_keyword_extractor.compute_cumulative_frequencies import (
     compute_cumul_freq_monogram,
     compute_cumul_freq_bigram,
 )
-from fbi import compute_fbi
-from fni import compute_fni
-from hwo import compute_hwo
-from hwpo import compute_hwpo
-from ranked_ngrams import compute_ranked_ngrams
+from has_keyword_extractor.fbi import compute_fbi
+from has_keyword_extractor.fni import compute_fni
+from has_keyword_extractor.hwo import compute_hwo
+from has_keyword_extractor.hwpo import compute_hwpo
+from has_keyword_extractor.ranked_ngrams import compute_ranked_ngrams
 
 
 class StatisticsKeywordsExtraction:
