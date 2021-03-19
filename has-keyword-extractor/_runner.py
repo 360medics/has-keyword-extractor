@@ -1,9 +1,9 @@
 from typing import Dict
 
-import spacy
+from alive_progress import alive_bar
 
 from _statistics_keywords_extraction import StatisticsKeywordsExtraction
-from preprocessing_text import preprocessing_text
+from _preprocessing_text import preprocessing_text
 
 
 def st_process_doc(text: str, nlp, alpha: float, threshold: float):
@@ -13,10 +13,13 @@ def st_process_doc(text: str, nlp, alpha: float, threshold: float):
 
 
 def st_process_multiple_doc(
-    documents: Dict[str, str], spacy_model: str, alpha: float, threshold: float
+    documents: Dict[str, str], nlp, alpha: float, threshold: float
 ):
-    nlp = spacy.load(spacy_model)
-    return {
-        title: st_process_doc(content, nlp, alpha, threshold)
-        for title, content in documents.items()
-    }
+    print('🔎 Begin keyword extraction : ')
+    result = {}
+    with alive_bar(len(documents)) as progress_bar:
+        for title, content in documents.items():
+            result[title] = st_process_doc(content, nlp, alpha, threshold)
+            progress_bar()
+    print('keyword extraction is ended')
+    return result

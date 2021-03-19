@@ -1,9 +1,13 @@
 import statistics
 
 
-def compute_ranked_ngrams(fni_ngrams, bigram_frequencies, monogram_frequencies):
+def compute_ranked_ngrams(fni_ngrams, bigram_frequencies, monogram_frequencies, sep='[PUNCT]'):
     highest_ngrams_freqs = sorted(
-        bigram_frequencies.items(), key=lambda x: x[1], reverse=True
+        dict(
+            filter(lambda x: sep not in x[0], bigram_frequencies.items())
+        ).items(),
+        key=lambda x: x[1],
+        reverse=True,
     )[0][1]
     highest_monogram = extract_high_relevant_monograms(
         monogram_frequencies, highest_ngrams_freqs
@@ -20,6 +24,7 @@ def compute_ranked_ngrams(fni_ngrams, bigram_frequencies, monogram_frequencies):
     top_ranked_ngram = sorted(ngrams, key=lambda x: x[1], reverse=True)[:11]
 
     return {
+        "top_ranked_bigrams": top_ranked_bigram,
         "highest_monogram": highest_monogram,
         "highest_ngrams": highest_ngrams,
         "top_ranked_ngram": top_ranked_ngram,
