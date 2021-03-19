@@ -3,7 +3,6 @@ from typing import Counter, Dict
 
 
 def compute_cumul_freq_monogram(monogram_frequencies: Counter) -> Dict:
-
     monogram_cumul_freqs = {}
     for freq in monogram_frequencies.values():
         if freq not in monogram_cumul_freqs.keys():
@@ -18,7 +17,7 @@ def compute_cumul_freq_monogram(monogram_frequencies: Counter) -> Dict:
                 if other_freq_key != freq_key
             ]
         )
-        for freq_key in monogram_cumul_freqs.keys()
+        for freq_key in monogram_cumul_freqs
     }
     cumul = 0
     for key in sorted(list(monogram_cumul_freqs.keys())):
@@ -29,7 +28,6 @@ def compute_cumul_freq_monogram(monogram_frequencies: Counter) -> Dict:
 
 
 def compute_cumul_freq_bigram(bigram_frequencies: Counter):
-
     bigram_cumul_freqs = {}
     for freq in bigram_frequencies.values():
         if freq not in bigram_cumul_freqs.keys():
