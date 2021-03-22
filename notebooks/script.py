@@ -17,8 +17,8 @@ def extract_content(content):
 @click.option("--output-path", required=True)
 def main(input_path, output_path):
     data = {
-        d["$"]["url"]: extract_content(d["field"])
-        for d in json.load(open(input_path, "r"))
+        d[0]: extract_content(d[1])
+        for d in json.load(open(input_path, "r")).items()
     }
     data = {url: content for url, content in data.items() if content is not None}
     json.dump(data, open(output_path, "w"), indent=4, sort_keys=True)
