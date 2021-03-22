@@ -30,7 +30,7 @@ class StatisticsKeywordsExtraction:
 
         if (
             len(set(self.monogram_frequencies.values())) < 3
-            or len(set(self.bigram_frequencies.values())) < 3
+            or len(set(self.bigram_frequencies.values())) < 2
         ):
             warnings.warn(
                 "it seems that the documents is too short to apply this method 😢. "

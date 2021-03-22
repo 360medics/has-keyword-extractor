@@ -5,6 +5,8 @@ from typing import Dict
 from alive_progress import alive_bar
 from has_keyword_extractor._preprocessing_text import preprocessing_text
 from has_keyword_extractor._statistics_keywords_extraction import StatisticsKeywordsExtraction
+import nltk
+nltk.download('stopwords')
 
 
 def st_process_doc(text: str, nlp, alpha: float, threshold: float):

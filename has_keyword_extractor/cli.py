@@ -16,7 +16,9 @@ def doc():
 @click.option("--path", required=True)
 def process_doc(path, spacy_model, alpha, threshold):
     nlp = spacy.load(spacy_model)
-    text = '\n'.join(open(path, 'r').readlines())
+    text = (
+        " ".join(open(path, "r").readlines())
+    )
     print(st_process_doc(text, nlp, alpha, threshold))
 
 
@@ -37,5 +39,5 @@ def process_docs(path, spacy_model, threshold, alpha):
 
 
 keyword_extractor = click.CommandCollection(sources=[doc, docs])
-if __name__ == '__main__':
+if __name__ == "__main__":
     keyword_extractor()
